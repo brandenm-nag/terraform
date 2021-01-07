@@ -13,6 +13,6 @@ $(hostname -f)
 cluster_id=${cluster_id}
 EOF
 
-time python3 -u /usr/bin/ansible-pull --url=https://github.com/clusterinthecloud/ansible.git --checkout=${ansible_branch} --inventory=/root/hosts nfsserver.yml >> /root/ansible-pull.log
+time python3 -u /usr/bin/ansible-pull --url=${ansible_repo} --checkout=${ansible_branch} --inventory=/root/hosts nfsserver.yml >> /root/ansible-pull.log
 
 date

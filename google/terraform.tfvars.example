@@ -14,3 +14,6 @@ EOF
 
 private_key_path                    = "~/.ssh/citc-google"
 public_key_path                     = "~/.ssh/citc-google.pub"
+
+ansible_repo                        = "https://github.com/brandenm-nag/ansible.git"
+ansible_branch                      = "c398_master"

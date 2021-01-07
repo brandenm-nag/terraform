@@ -19,3 +19,6 @@ EOF
 ManagementShape = "VM.Standard2.1"
 ManagementAD = "1"
 FilesystemAD = "1"
+
+ansible_repo                        = "https://github.com/brandenm-nag/ansible.git"
+ansible_branch                      = "c398_master"
