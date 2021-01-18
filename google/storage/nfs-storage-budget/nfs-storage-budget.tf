@@ -12,6 +12,7 @@ resource "google_compute_disk" "nfsshare" {
 data "template_file" "nfs-script" {
   template = file("${path.module}/files/nfsconfig.sh.tpl")
   vars = {
+    ansible_repo = var.ansible_repo
     ansible_branch = var.ansible_branch
     cluster_id = var.cluster_id
   }

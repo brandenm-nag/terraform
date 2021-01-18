@@ -14,6 +14,7 @@ module "budget_filer_shared_storage" {
   cluster_id = local.cluster_id
   region = var.region
   project = var.project
+  ansible_repo = var.ansible_repo
   ansible_branch = var.ansible_branch
   vpc_subnetwork = google_compute_subnetwork.vpc_subnetwork.name
 

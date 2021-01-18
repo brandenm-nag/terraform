@@ -42,6 +42,9 @@ variable "nfs_budget_image" {
 variable "nfs_disk_type" {
 }
 
+variable "ansible_repo" {
+}
+
 variable "ansible_branch" {
 }
 
