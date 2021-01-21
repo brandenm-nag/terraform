@@ -26,6 +26,7 @@ data "template_file" "startnode-yaml" {
     cloud-platform = "google"
     project        = var.project
     zone           = var.zone
+    region         = var.region
     subnet         = "regions/${var.region}/subnetworks/${google_compute_subnetwork.vpc_subnetwork.name}"
     network_name    = google_compute_network.vpc_network.name
     subnet_name    = google_compute_subnetwork.vpc_subnetwork.name
