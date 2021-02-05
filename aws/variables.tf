@@ -47,3 +47,7 @@ variable "ansible_repo" {
 variable "ansible_branch" {
   default = "6"
 }
+
+variable "service_update_file" {
+    default = null
+}

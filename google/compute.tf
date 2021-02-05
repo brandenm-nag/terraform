@@ -59,6 +59,11 @@ resource "google_compute_instance" "mgmt" {
   }
 
   provisioner "file" {
+    destination = "/tmp/update_service_db"
+    source      = var.service_update_file
+  }
+
+  provisioner "file" {
     destination = "/tmp/mgmt-sa-credentials.json"
     content     = base64decode(google_service_account_key.mgmt-sa-key.private_key)
   }
