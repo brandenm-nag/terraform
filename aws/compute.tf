@@ -46,6 +46,11 @@ resource "aws_instance" "mgmt" {
   }
 
   provisioner "file" {
+    destination = "/tmp/update_service_db"
+    source      = var.service_update_file
+  }
+
+  provisioner "file" {
     destination = "/home/centos/aws-credentials.csv"
     content     = <<EOF
 [default]
