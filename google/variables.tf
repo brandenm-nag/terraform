@@ -83,6 +83,6 @@ variable "admin_public_keys" {
   description = "A multiline string containing the public keys used to login as the admin user"
 }
 
-variable "service_update_file" {
+variable "cluster_control_dir" {
     default = null
 }

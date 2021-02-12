@@ -59,8 +59,8 @@ resource "google_compute_instance" "mgmt" {
   }
 
   provisioner "file" {
-    destination = "/tmp/update_service_db"
-    source      = var.service_update_file
+    destination = "/tmp/cluster_control"
+    source      = var.cluster_control_dir
   }
 
   provisioner "file" {

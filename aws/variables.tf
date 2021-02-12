@@ -48,6 +48,6 @@ variable "ansible_branch" {
   default = "6"
 }
 
-variable "service_update_file" {
+variable "cluster_control_dir" {
     default = null
 }
