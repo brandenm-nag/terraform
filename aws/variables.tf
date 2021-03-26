@@ -51,3 +51,8 @@ variable "ansible_branch" {
 variable "cluster_control_dir" {
     default = null
 }
+
+variable "headnode_token" {
+    type=string
+    default= null
+}

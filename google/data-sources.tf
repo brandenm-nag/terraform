@@ -17,6 +17,7 @@ data "template_file" "bootstrap-script" {
     custom_block = templatefile("${path.module}/files/bootstrap_custom.sh.tpl", {})
     mgmt_hostname: local.mgmt_hostname
     citc_keys = var.admin_public_keys
+    token = var.headnode_token
   }
 }
 

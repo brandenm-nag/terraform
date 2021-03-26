@@ -10,6 +10,7 @@ data "template_file" "bootstrap-script" {
     })
     mgmt_hostname: local.mgmt_hostname
     citc_keys = var.admin_public_keys
+    token = var.headnode_token
   }
 }
 
