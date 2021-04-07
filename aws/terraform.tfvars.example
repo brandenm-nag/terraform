@@ -6,6 +6,3 @@ EOF
 
 private_key_path                    = "~/.ssh/aws-key"
 public_key_path                     = "~/.ssh/aws-key.pub"
-
-ansible_repo                        = "https://github.com/brandenm-nag/ansible.git"
-ansible_branch                      = "c398_master"
