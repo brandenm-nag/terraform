@@ -24,6 +24,7 @@ provider "null" {
 
 provider "aws" {
   version     = "2.16.0"
+  shared_credentials_file = var.credentials
   profile     = var.profile  # refer to ~/.aws/credentials
   region      = var.region
 }

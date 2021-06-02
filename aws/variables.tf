@@ -32,7 +32,7 @@ variable "admin_public_keys" {
   description = "A multiline string containing the public keys used to login as the admin user"
 }
 
-variable "aws_shared_credentials" {
+variable "credentials" {
   default = "~/.aws/credentials"
 }
 
