@@ -1,6 +1,7 @@
 csp: ${cloud-platform}
 compartment_id: ${project}
 zone: ${zone}
+region: ${region}
 network_name: ${network_name}
 subnet: ${subnet}
 subnet_name: ${subnet_name}
