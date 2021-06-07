@@ -36,8 +36,8 @@ resource "aws_instance" "mgmt" {
   connection {
     type        = "ssh"
     user        = "centos"
-    private_key = data.local_file.ssh_private_key.content
-    host        = aws_instance.mgmt.public_ip
+    private_key = file("${path.module}/../../.ssh/id_rsa")
+    host        = self.public_ip
   }
 
   provisioner "file" {
@@ -62,17 +62,6 @@ EOF
   tags = {
     Name = local.mgmt_hostname
     cluster = local.cluster_id
-  }
-}
-
-resource "null_resource" "tear_down" {
-  depends_on = [aws_route53_record.mgmt]
-
-  connection {
-    type        = "ssh"
-    user        = "centos"
-    private_key = data.local_file.ssh_private_key.content
-    host        = aws_instance.mgmt.public_ip
   }
 
   provisioner "remote-exec" {

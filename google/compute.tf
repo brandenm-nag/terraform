@@ -2,6 +2,20 @@ locals {
   mgmt_hostname = "mgmt-${local.cluster_id}"
 }
 
+data "google_compute_image" "base_image" {
+    family = "centos-8"
+    project = "centos-cloud"
+}
+
+resource "google_compute_image" "base_client_image" {
+    name = "citc-slurm-compute-${local.cluster_id}-v1"
+    guest_os_features {
+        type = "GVNIC"
+    }
+    source_image = data.google_compute_image.base_image.self_link
+}
+
+
 # Management node instance
 resource "google_compute_instance" "mgmt" {
   name                    = local.mgmt_hostname
@@ -44,8 +58,8 @@ resource "google_compute_instance" "mgmt" {
   connection {
     type        = "ssh"
     user        = "provisioner"
-    private_key = data.local_file.ssh_private_key.content
-    host        = google_compute_instance.mgmt.network_interface[0].access_config[0].nat_ip
+    private_key = file("${path.module}/../../.ssh/id_rsa")
+    host        = self.network_interface[0].access_config[0].nat_ip
   }
 
   provisioner "file" {
