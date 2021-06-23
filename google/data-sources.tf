@@ -35,5 +35,6 @@ data "template_file" "startnode-yaml" {
     ansible_branch = var.ansible_branch
     custom_block = ""
     cluster_id: local.cluster_id
+    use_advanced_networking = var.use_advanced_networking
   }
 }

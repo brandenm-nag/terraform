@@ -8,3 +8,4 @@ subnet_name: ${subnet_name}
 ansible_repo: ${ansible_repo}
 ansible_branch: ${ansible_branch}
 cluster_id: ${cluster_id}
+use_advanced_networking: ${use_advanced_networking}
