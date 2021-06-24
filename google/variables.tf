@@ -94,5 +94,5 @@ variable "headnode_token" {
 variable "use_advanced_networking" {
     type = bool
     default = false
-    description - "Signal to use GVNIC"
+    description = "Signal to use GVNIC"
 }
